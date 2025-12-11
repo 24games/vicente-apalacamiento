@@ -82,17 +82,14 @@ export default function LandingPage() {
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Contador de Vagas */}
           <div className="text-center mb-8">
-            <div className="inline-flex flex-col items-center gap-3 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 border-2 border-red-500/50 rounded-2xl px-8 py-4 animate-pulse">
+            <div className="inline-flex flex-col items-center gap-2 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 border-2 border-red-500/50 rounded-xl px-6 py-3 animate-pulse">
               <div className="flex items-center gap-2">
-                <AlertCircle className="w-6 h-6 text-red-500 animate-pulse" />
-                <span className="text-red-500 text-sm font-bold uppercase tracking-wider">Vagas Limitadas</span>
+                <AlertCircle className="w-5 h-5 text-red-500 animate-pulse" />
+                <span className="text-red-500 text-xs font-bold uppercase tracking-wider">Vagas Limitadas</span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-black text-white">{availableSpots}</span>
-                <span className="text-xl text-gray-400">vagas restantes</span>
-              </div>
-              <div className="text-xs text-gray-500">
-                {availableSpots <= 10 ? '⚠️ Últimas vagas!' : 'Diminuindo a cada minuto'}
+                <span className="text-3xl font-black text-white">{availableSpots}</span>
+                <span className="text-sm text-gray-400">vagas restantes</span>
               </div>
             </div>
           </div>
