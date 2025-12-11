@@ -109,8 +109,8 @@ export default function LandingPage() {
               <span className="text-green-500">$300.000</span> em Apenas <span className="text-green-500">9 Passos</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Método comprovado por <span className="text-green-500 font-bold">+30.000 pessoas</span>. Odds seguras de 1.40. <span className="text-green-500 font-bold">+80% de acerto</span>. Sem precisar entender de apostas.
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Junte-se ao grupo VIP <span className="text-green-500 font-bold">GRATUITO</span> e receba tips diárias com <span className="text-green-500 font-bold">+80% de acerto</span>
             </p>
 
             <a href="#cta" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-black font-bold text-lg px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 mb-12 animate-pulse">
