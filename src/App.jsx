@@ -285,15 +285,17 @@ export default function LandingPage() {
             {/* Carrossel 1 */}
             <div className="absolute left-0 w-1/3 h-full">
               <div className="animate-scroll-vertical space-y-4">
-                {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((i, idx) => (
-                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl p-4 mx-2">
-                    <div className="aspect-square bg-gradient-to-br from-green-500/20 to-black rounded-lg mb-3 flex items-center justify-center">
-                      <TrendingUp className="w-12 h-12 text-green-500" />
-                    </div>
-                    <div className="text-center">
-                      <div className="text-green-500 font-bold text-lg">+${(Math.random() * 500 + 100).toFixed(0)}.XXX</div>
-                      <div className="text-xs text-gray-500">Membro #{i}</div>
-                    </div>
+                {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((i, idx) => (
+                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl overflow-hidden mx-2 hover:border-green-500 transition-all">
+                    <img 
+                      src={`/images/proofs/slide-${i}.png`} 
+                      alt={`Prova social ${i}`}
+                      className="w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23111" width="400" height="400"/><text x="50%" y="50%" text-anchor="middle" fill="%2322c55e" font-size="24">Slide ' + i + '</text></svg>';
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -302,15 +304,17 @@ export default function LandingPage() {
             {/* Carrossel 2 */}
             <div className="absolute left-1/3 w-1/3 h-full">
               <div className="animate-scroll-vertical-reverse space-y-4">
-                {[7, 8, 9, 10, 11, 12, 7, 8, 9, 10, 11, 12].map((i, idx) => (
-                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl p-4 mx-2">
-                    <div className="aspect-square bg-gradient-to-br from-green-500/20 to-black rounded-lg mb-3 flex items-center justify-center">
-                      <Award className="w-12 h-12 text-green-500" />
-                    </div>
-                    <div className="text-center">
-                      <div className="text-green-500 font-bold text-lg">+${(Math.random() * 600 + 150).toFixed(0)}.XXX</div>
-                      <div className="text-xs text-gray-500">Membro #{i}</div>
-                    </div>
+                {[2, 3, 4, 5, 1, 2, 3, 4, 5, 1].map((i, idx) => (
+                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl overflow-hidden mx-2 hover:border-green-500 transition-all">
+                    <img 
+                      src={`/images/proofs/slide-${i}.png`} 
+                      alt={`Prova social ${i}`}
+                      className="w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23111" width="400" height="400"/><text x="50%" y="50%" text-anchor="middle" fill="%2322c55e" font-size="24">Slide ' + i + '</text></svg>';
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -319,15 +323,17 @@ export default function LandingPage() {
             {/* Carrossel 3 */}
             <div className="absolute left-2/3 w-1/3 h-full">
               <div className="animate-scroll-vertical space-y-4">
-                {[13, 14, 15, 16, 17, 18, 13, 14, 15, 16, 17, 18].map((i, idx) => (
-                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl p-4 mx-2">
-                    <div className="aspect-square bg-gradient-to-br from-green-500/20 to-black rounded-lg mb-3 flex items-center justify-center">
-                      <Target className="w-12 h-12 text-green-500" />
-                    </div>
-                    <div className="text-center">
-                      <div className="text-green-500 font-bold text-lg">+${(Math.random() * 700 + 200).toFixed(0)}.XXX</div>
-                      <div className="text-xs text-gray-500">Membro #{i}</div>
-                    </div>
+                {[3, 4, 5, 1, 2, 3, 4, 5, 1, 2].map((i, idx) => (
+                  <div key={idx} className="bg-zinc-900 border border-green-500/30 rounded-xl overflow-hidden mx-2 hover:border-green-500 transition-all">
+                    <img 
+                      src={`/images/proofs/slide-${i}.png`} 
+                      alt={`Prova social ${i}`}
+                      className="w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23111" width="400" height="400"/><text x="50%" y="50%" text-anchor="middle" fill="%2322c55e" font-size="24">Slide ' + i + '</text></svg>';
+                      }}
+                    />
                   </div>
                 ))}
               </div>
