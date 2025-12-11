@@ -187,17 +187,6 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            
-            <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-              Com mais de 8 anos de experiência no mercado de apostas esportivas, Vicente desenvolveu o método dos 9 passos que já transformou a vida de mais de 30.000 pessoas. Especialista em gestão de banca e alavancagem segura.
-            </p>
-            
-            <div className="bg-green-500/5 border-l-4 border-green-500 p-6 rounded-lg">
-              <p className="text-gray-300 text-lg italic">
-                "Criei este método pensando em pessoas que têm pouco dinheiro. Odds de 1.40 garantem segurança máxima. Não é sorte, é matemática."
-              </p>
-              <p className="text-green-500 font-bold mt-2">— Vicente</p>
-            </div>
           </div>
         </div>
       </section>
