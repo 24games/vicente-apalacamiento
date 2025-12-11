@@ -6,12 +6,23 @@ import { Check, TrendingUp, Users, Clock, Shield, Award, ChevronDown, Zap, Targe
 export default function LandingPage() {
   const [activeTab, setActiveTab] = useState(null);
   const [memberCount, setMemberCount] = useState(12347);
+  const [availableSpots, setAvailableSpots] = useState(60);
   const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 47, seconds: 32 });
 
   useEffect(() => {
     const interval = setInterval(() => {
       setMemberCount(prev => prev + Math.floor(Math.random() * 3));
     }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAvailableSpots(prev => {
+        const newValue = prev - 4;
+        return newValue <= 0 ? 3 : newValue; // Para em 3 para manter urgência
+      });
+    }, 60000); // 60000ms = 1 minuto
     return () => clearInterval(interval);
   }, []);
 
@@ -69,10 +80,27 @@ export default function LandingPage() {
         }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Contador de Vagas */}
+          <div className="text-center mb-8">
+            <div className="inline-flex flex-col items-center gap-3 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 border-2 border-red-500/50 rounded-2xl px-8 py-4 animate-pulse">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="w-6 h-6 text-red-500 animate-pulse" />
+                <span className="text-red-500 text-sm font-bold uppercase tracking-wider">Vagas Limitadas</span>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className="text-5xl font-black text-white">{availableSpots}</span>
+                <span className="text-xl text-gray-400">vagas restantes</span>
+              </div>
+              <div className="text-xs text-gray-500">
+                {availableSpots <= 10 ? '⚠️ Últimas vagas!' : 'Diminuindo a cada minuto'}
+              </div>
+            </div>
+          </div>
+
           {/* Badge Online */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-6 py-2 animate-pulse">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-6 py-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-green-400 text-sm font-medium">{memberCount.toLocaleString()} pessoas online agora</span>
             </div>
           </div>
