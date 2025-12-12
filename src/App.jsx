@@ -51,22 +51,22 @@ export default function LandingPage() {
   ];
 
   const faqs = [
-    { q: 'É realmente 100% gratuito?', a: 'Sim! O grupo VIP no Telegram é completamente gratuito. Você não paga nada para entrar e receber as tips diárias.' },
-    { q: 'Preciso entender de apostas?', a: 'Não! O método é tão simples que até iniciantes conseguem seguir. Você só precisa copiar as entradas que enviamos.' },
-    { q: 'Quanto dinheiro preciso para começar?', a: 'Pode começar com apenas $15.000 pesos. O método foi criado justamente para quem tem pouco capital inicial.' },
-    { q: 'Apostas não são muito arriscadas?', a: 'Trabalhamos APENAS com odds de 1.40 — as mais seguras do mercado. Nossa taxa de acerto é superior a 80%, muito acima da média.' },
-    { q: 'Quanto tempo leva para completar os 9 passos?', a: 'Em média 3 dias. Alguns alunos completam em 2 dias, dependendo do calendário de jogos.' },
-    { q: 'Funciona para iniciantes?', a: 'Sim! A maioria dos nossos membros eram iniciantes totais. O método é simples: receba a tip, copie a entrada, lucre.' },
-    { q: 'Como recebo as tips diárias?', a: 'Assim que entrar no grupo VIP do Telegram, você receberá notificações com as melhores oportunidades do dia.' }
+    { q: '¿Es realmente 100% gratis?', a: '¡Sí! El grupo VIP en Telegram es completamente gratis. No pagas nada para entrar y recibir los tips diarios.' },
+    { q: '¿Necesito entender de apuestas?', a: '¡No! El método es tan simple que hasta los principiantes pueden seguirlo. Solo necesitas copiar las entradas que enviamos.' },
+    { q: '¿Cuánto dinero necesito para empezar?', a: 'Puedes empezar con solo $15.000 pesos. El método fue creado justamente para quienes tienen poco capital inicial.' },
+    { q: '¿Las apuestas no son muy arriesgadas?', a: 'Trabajamos SOLO con cuotas de 1.40 — las más seguras del mercado. Nuestra tasa de acierto es superior al 80%, muy por encima del promedio.' },
+    { q: '¿Cuánto tiempo toma completar los 9 pasos?', a: 'En promedio 3 días. Algunos alumnos lo completan en 2 días, dependiendo del calendario de partidos.' },
+    { q: '¿Funciona para principiantes?', a: '¡Sí! La mayoría de nuestros miembros eran principiantes totales. El método es simple: recibe el tip, copia la entrada, gana.' },
+    { q: '¿Cómo recibo los tips diarios?', a: 'En cuanto entres al grupo VIP de Telegram, recibirás notificaciones con las mejores oportunidades del día.' }
   ];
 
   const benefits = [
-    'Tips diárias com +80% de taxa de acerto',
-    'Gestão de banca profissional',
-    'Cashbacks exclusivos para membros',
-    'Cuotas turbinadas nos melhores jogos',
-    'Suporte direto da equipe do Vicente',
-    'Comunidade ativa com +12.000 membros'
+    'Tips diarios con +80% de tasa de acierto',
+    'Gestión de banca profesional',
+    'Cashbacks exclusivos para miembros',
+    'Cuotas turbinadas en los mejores partidos',
+    'Soporte directo del equipo de Vicente',
+    'Comunidad activa con +12.000 miembros'
   ];
 
   return (
@@ -85,11 +85,11 @@ export default function LandingPage() {
             <div className="inline-flex flex-col items-center gap-2 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 border-2 border-red-500/50 rounded-xl px-6 py-3 animate-pulse">
               <div className="flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-red-500 animate-pulse" />
-                <span className="text-red-500 text-xs font-bold uppercase tracking-wider">Vagas Limitadas</span>
+                <span className="text-red-500 text-xs font-bold uppercase tracking-wider">Cupos Limitados</span>
               </div>
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-black text-white">{availableSpots}</span>
-                <span className="text-sm text-gray-400">vagas restantes</span>
+                <span className="text-sm text-gray-400">cupos restantes</span>
               </div>
             </div>
           </div>
@@ -98,19 +98,19 @@ export default function LandingPage() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-6 py-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-green-400 text-sm font-medium">{memberCount.toLocaleString()} pessoas online agora</span>
+              <span className="text-green-400 text-sm font-medium">{memberCount.toLocaleString()} personas online ahora</span>
             </div>
           </div>
 
           {/* Headline Principal */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-              Transforme <span className="text-green-500">$15.000</span> em<br/>
-              <span className="text-green-500">$300.000</span> em Apenas <span className="text-green-500">9 Passos</span>
+              Transforma <span className="text-green-500">$15.000</span> en<br/>
+              <span className="text-green-500">$300.000</span> en Solo <span className="text-green-500">9 Pasos</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Junte-se ao grupo VIP <span className="text-green-500 font-bold">GRATUITO</span> e receba tips diárias com <span className="text-green-500 font-bold">+80% de acerto</span>
+              Únete al grupo VIP <span className="text-green-500 font-bold">GRATIS</span> y recibe tips diarios con <span className="text-green-500 font-bold">+80% de acierto</span>
             </p>
 
             <a href="https://t.me/seu_grupo_aqui" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-lg px-10 py-5 rounded-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-500/50 mb-4 w-full max-w-md mx-auto">
@@ -127,19 +127,19 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center gap-6 text-center">
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-green-500" />
-                <span className="text-sm text-gray-400">+12.000 membros</span>
+                <span className="text-sm text-gray-400">+12.000 miembros</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-green-500" />
-                <span className="text-sm text-gray-400">80% taxa de sucesso</span>
+                <span className="text-sm text-gray-400">80% tasa de éxito</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-green-500" />
-                <span className="text-sm text-gray-400">Completa em 3 dias</span>
+                <span className="text-sm text-gray-400">Completa en 3 días</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-green-500" />
-                <span className="text-sm text-gray-400">100% gratuito</span>
+                <span className="text-sm text-gray-400">100% gratis</span>
               </div>
             </div>
           </div>
@@ -151,12 +151,12 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block bg-green-500/10 border border-green-500/30 rounded-full px-6 py-2 mb-4">
-              <span className="text-green-400 font-bold">O MÉTODO</span>
+              <span className="text-green-400 font-bold">EL MÉTODO</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
-              Progressão All-In com <span className="text-green-500">Odds 1.40</span>
+              Progresión All-In con <span className="text-green-500">Cuota 1.40</span>
             </h2>
-            <p className="text-xl text-gray-400">O caminho mais seguro de $15.000 para $300.000</p>
+            <p className="text-xl text-gray-400">El camino más seguro de $15.000 a $300.000</p>
           </div>
 
           <div className="bg-black border-2 border-green-500/30 rounded-3xl p-6 md:p-10 mb-8">
@@ -178,18 +178,18 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="bg-gradient-to-br from-green-500/10 to-black border border-green-500/30 rounded-2xl p-6">
               <div className="text-5xl font-bold text-green-500 mb-2">1.40</div>
-              <div className="text-gray-400">Odds Seguras</div>
-              <div className="text-sm text-green-500 mt-2">As mais confiáveis do mercado</div>
+              <div className="text-gray-400">Cuotas Seguras</div>
+              <div className="text-sm text-green-500 mt-2">Las más confiables del mercado</div>
             </div>
             <div className="bg-gradient-to-br from-green-500/10 to-black border border-green-500/30 rounded-2xl p-6">
               <div className="text-5xl font-bold text-green-500 mb-2">3 dias</div>
-              <div className="text-gray-400">Tempo Médio</div>
-              <div className="text-sm text-green-500 mt-2">Complete os 9 passos rapidamente</div>
+              <div className="text-gray-400">Tiempo Promedio</div>
+              <div className="text-sm text-green-500 mt-2">Completa los 9 pasos rápidamente</div>
             </div>
             <div className="bg-gradient-to-br from-green-500/10 to-black border border-green-500/30 rounded-2xl p-6">
               <div className="text-5xl font-bold text-green-500 mb-2">80%+</div>
-              <div className="text-gray-400">Taxa de Acerto</div>
-              <div className="text-sm text-green-500 mt-2">Comprovado por milhares</div>
+              <div className="text-gray-400">Tasa de Acierto</div>
+              <div className="text-sm text-green-500 mt-2">Comprobado por miles</div>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function LandingPage() {
               <div className="w-40 h-40 rounded-full flex-shrink-0 overflow-hidden border-4 border-green-500 shadow-lg shadow-green-500/50">
                 <img 
                   src="/images/vicente.jpg" 
-                  alt="Vicente - Expert Chileno em Alavancagem"
+                  alt="Vicente - Experto Chileno en Apalancamiento"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.onerror = null;
@@ -213,15 +213,15 @@ export default function LandingPage() {
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-4xl font-bold mb-2">Vicente</h3>
-                <p className="text-green-500 text-xl mb-4">Expert Chileno em Alavancagem</p>
+                <p className="text-green-500 text-xl mb-4">Experto Chileno en Apalancamiento</p>
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                   <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
                     <span className="text-green-400 font-bold text-lg">+30.000</span>
                     <span className="text-gray-400 text-sm ml-2">Seguidores</span>
                   </div>
                   <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
-                    <span className="text-green-400 font-bold text-lg">8 anos</span>
-                    <span className="text-gray-400 text-sm ml-2">Experiência</span>
+                    <span className="text-green-400 font-bold text-lg">8 años</span>
+                    <span className="text-gray-400 text-sm ml-2">Experiencia</span>
                   </div>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block bg-green-500 text-black font-bold px-6 py-2 rounded-full mb-4">
-              🏆 CASE DE SUCESSO DESTAQUE
+              🏆 CASO DE ÉXITO DESTACADO
             </div>
             <h2 className="text-4xl md:text-6xl font-bold">
               De $15.000 a <span className="text-green-500">$730.000</span>
@@ -245,22 +245,22 @@ export default function LandingPage() {
           <div className="bg-gradient-to-br from-green-500/20 to-black border-4 border-green-500 rounded-3xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
               <div>
-                <h3 className="text-3xl font-bold mb-4">Pedro, 28 anos</h3>
+                <h3 className="text-3xl font-bold mb-4">Pedro, 28 años</h3>
                 <p className="text-xl text-gray-300 mb-4">
-                  Iniciante total. Multiplicou sua banca em <span className="text-green-500 font-bold">48x</span> em apenas <span className="text-green-500 font-bold">1 mês</span>.
+                  Principiante total. Multiplicó su banca en <span className="text-green-500 font-bold">48x</span> en solo <span className="text-green-500 font-bold">1 mes</span>.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span>Começou com apenas $15.000</span>
+                    <span>Empezó con solo $15.000</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span>Seguiu exatamente o método</span>
+                    <span>Siguió exactamente el método</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-5 h-5 text-green-500" />
-                    <span>Atingiu $730.000 em 30 dias</span>
+                    <span>Alcanzó $730.000 en 30 días</span>
                   </div>
                 </div>
               </div>
@@ -268,26 +268,26 @@ export default function LandingPage() {
                 <div className="aspect-video bg-gradient-to-br from-green-500/20 to-black rounded-lg mb-4 flex items-center justify-center">
                   <TrendingUp className="w-16 h-16 text-green-500" />
                 </div>
-                <p className="text-sm text-gray-400 mb-2">Print do ganho verificado</p>
+                <p className="text-sm text-gray-400 mb-2">Captura de ganancia verificada</p>
               </div>
             </div>
 
             <div className="bg-black/50 rounded-2xl p-6 border border-green-500/30">
               <p className="text-gray-300 text-lg italic mb-4">
-                "Trabalhava 12 horas por dia e mal pagava as contas. Em 1 mês transformei $15.000 em $730.000. Hoje tenho tempo para minha família e não preciso me preocupar com dinheiro. Mudou minha vida completamente."
+                "Trabajaba 12 horas al día y apenas pagaba las cuentas. En 1 mes transformé $15.000 en $730.000. Hoy tengo tiempo para mi familia y no tengo que preocuparme por plata. Cambió mi vida completamente."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-green-500 rounded-full"></div>
                 <div>
                   <div className="font-bold">Pedro S.</div>
-                  <div className="text-sm text-gray-500">Membro há 2 meses</div>
+                  <div className="text-sm text-gray-500">Miembro hace 2 meses</div>
                 </div>
               </div>
             </div>
 
             <div className="text-center mt-8">
               <a href="#cta" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-black font-bold text-lg px-8 py-4 rounded-full transition-all transform hover:scale-105">
-                <span>EU TAMBÉM QUERO ESSES RESULTADOS</span>
+                <span>YO TAMBIÉN QUIERO ESTOS RESULTADOS</span>
                 <TrendingUp className="w-5 h-5" />
               </a>
             </div>
@@ -300,9 +300,9 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Centenas de <span className="text-green-500">Ganhos Verificados</span>
+              Cientos de <span className="text-green-500">Ganancias Verificadas</span>
             </h2>
-            <p className="text-xl text-gray-400">Resultados reais de membros reais</p>
+            <p className="text-xl text-gray-400">Resultados reales de miembros reales</p>
           </div>
 
           <div className="relative h-[600px] overflow-hidden">
@@ -403,9 +403,9 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Perguntas <span className="text-green-500">Frequentes</span>
+              Preguntas <span className="text-green-500">Frecuentes</span>
             </h2>
-            <p className="text-xl text-gray-400">Tire todas as suas dúvidas</p>
+            <p className="text-xl text-gray-400">Resuelve todas tus dudas</p>
           </div>
 
           <div className="space-y-4">
@@ -434,11 +434,11 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-zinc-900 to-black border-4 border-green-500 rounded-3xl p-8 md:p-12">
             <div className="inline-block bg-red-500 text-white font-bold px-6 py-3 rounded-full mb-6 animate-pulse">
-              ⚠️ ÚLTIMAS VAGAS DISPONÍVEIS
+              ⚠️ ÚLTIMOS CUPOS DISPONIBLES
             </div>
 
             <div className="mb-6">
-              <div className="text-sm text-gray-400 mb-2">Oferta expira em:</div>
+              <div className="text-sm text-gray-400 mb-2">Oferta expira en:</div>
               <div className="flex justify-center gap-4">
                 <div className="bg-black border border-green-500 rounded-lg px-4 py-3">
                   <div className="text-3xl font-bold text-green-500">{timeLeft.hours}</div>
@@ -456,12 +456,12 @@ export default function LandingPage() {
             </div>
 
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Pronto Para Transformar<br/>
-              <span className="text-green-500">$15.000 em $300.000?</span>
+              ¿Listo Para Transformar<br/>
+              <span className="text-green-500">$15.000 en $300.000?</span>
             </h2>
 
             <p className="text-xl text-gray-300 mb-8">
-              Junte-se a +12.000 membros que já estão lucrando com o método
+              Únete a +12.000 miembros que ya están ganando con el método
             </p>
 
             <a href="https://t.me/seu_grupo_aqui" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-2xl px-14 py-6 rounded-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-500/50 mb-4">
@@ -477,11 +477,11 @@ export default function LandingPage() {
 
             <div className="text-sm text-gray-400 flex items-center justify-center gap-2 mb-4">
               <Shield className="w-4 h-4 text-green-500" />
-              <span>Sem Compromisso • Saia Quando Quiser</span>
+              <span>Sin Compromiso • Sal Cuando Quieras</span>
             </div>
 
             <p className="text-xs text-gray-500">
-              +347 pessoas entraram hoje • Vagas limitadas por questões de qualidade
+              +347 personas entraron hoy • Cupos limitados por temas de calidad
             </p>
           </div>
         </div>
@@ -492,15 +492,15 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex justify-center gap-6 mb-6">
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Termos de Uso</a>
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Política de Privacidade</a>
-              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Contato</a>
+              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Términos de Uso</a>
+              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Política de Privacidad</a>
+              <a href="#" className="text-gray-500 hover:text-green-500 transition-colors">Contacto</a>
             </div>
             <p className="text-sm text-gray-500 mb-2">
-              Este site não faz parte do Telegram nem é endossado pelo Telegram.
+              Este sitio no forma parte de Telegram ni está avalado por Telegram.
             </p>
             <p className="text-sm text-gray-600">
-              © 2025 Método Vicente. Todos os direitos reservados.
+              © 2025 Método Vicente. Todos los derechos reservados.
             </p>
           </div>
         </div>
