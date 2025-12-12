@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { Check, TrendingUp, Users, Clock, Shield, Award, ChevronDown, Zap, Target, DollarSign, Briefcase, Home, AlertCircle } from 'lucide-react';
+import { Check, TrendingUp, Users, Clock, Shield, Award, ChevronDown, Zap, Target, DollarSign, Briefcase, Home, AlertCircle, Send } from 'lucide-react';
 
 export default function LandingPage() {
   const [activeTab, setActiveTab] = useState(null);
@@ -113,13 +113,13 @@ export default function LandingPage() {
               Junte-se ao grupo VIP <span className="text-green-500 font-bold">GRATUITO</span> e receba tips diárias com <span className="text-green-500 font-bold">+80% de acerto</span>
             </p>
 
-            <a href="#cta" className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-black font-bold text-lg px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-green-500/50 mb-4 animate-pulse">
-              <span>ENTRAR NO GRUPO VIP GRÁTIS</span>
-              <TrendingUp className="w-5 h-5" />
+            <a href="https://t.me/seu_grupo_aqui" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-lg px-10 py-5 rounded-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-500/50 mb-4 w-full max-w-md mx-auto">
+              <Send className="w-6 h-6" />
+              <span>ENTRAR AL GRUPO AHORA</span>
             </a>
 
             <div className="text-center mb-12">
-              <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 text-sm underline transition-colors">
+              <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 text-sm underline transition-colors">
                 ¿No tienes Telegram? Haz clic aquí.
               </a>
             </div>
@@ -464,13 +464,13 @@ export default function LandingPage() {
               Junte-se a +12.000 membros que já estão lucrando com o método
             </p>
 
-            <a href="https://t.me/seu_grupo_aqui" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-black font-bold text-2xl px-12 py-6 rounded-full transition-all transform hover:scale-105 shadow-2xl shadow-green-500/50 mb-4 animate-pulse">
-              <Zap className="w-8 h-8" />
-              <span>ENTRAR NO GRUPO VIP AGORA</span>
+            <a href="https://t.me/seu_grupo_aqui" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-2xl px-14 py-6 rounded-xl transition-all transform hover:scale-105 shadow-2xl shadow-blue-500/50 mb-4">
+              <Send className="w-8 h-8" />
+              <span>ENTRAR AL GRUPO AHORA</span>
             </a>
 
             <div className="text-center mb-4">
-              <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-500 text-sm underline transition-colors">
+              <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 text-sm underline transition-colors">
                 ¿No tienes Telegram? Haz clic aquí.
               </a>
             </div>
