@@ -46,3 +46,6 @@ Depois de adicionar as imagens, use no código assim:
 - **Edição**: Photoshop, Figma, Canva
 - **Blur/Censura**: Qualquer editor de imagens
 
+
+
+
