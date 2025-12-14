@@ -310,7 +310,7 @@ export default function LandingPage() {
           </div>
 
           {/* CTA */}
-          <CTAButton />
+          <CTAButton telegramLink={telegramLink} />
         </div>
       </section>
 
@@ -617,7 +617,7 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="mt-12">
-            <CTAButton variant="secondary" />
+            <CTAButton telegramLink={telegramLink} variant="secondary" />
           </div>
         </div>
 
@@ -723,7 +723,7 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="mt-12">
-            <CTAButton />
+            <CTAButton telegramLink={telegramLink} />
           </div>
         </div>
       </section>
