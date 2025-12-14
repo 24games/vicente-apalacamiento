@@ -1,37 +1,5 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "vite",
   "rewrites": [
-    {
-      "source": "/cr1-a6f2",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/cr2-a6f2",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/cr3-a6f2",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/_redirects",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
