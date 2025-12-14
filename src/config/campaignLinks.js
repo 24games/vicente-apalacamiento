@@ -29,24 +29,28 @@ export function getTelegramLink(slug) {
 
 /**
  * Extrai a slug da URL atual
+ * Suporta tanto path (/cr1-a6f2) quanto query param (?c=cr1-a6f2)
  * @returns {string|null} Slug extraída da URL ou null
  */
 export function getSlugFromUrl() {
   if (typeof window === 'undefined') return null;
   
-  const path = window.location.pathname;
-  // Remove a barra inicial e pega a primeira parte
-  const slug = path.replace(/^\//, '').split('/')[0];
-  
-  // Remove query strings e hash se houver
-  const cleanSlug = slug.split('?')[0].split('#')[0];
-  
-  // Retorna null se não houver slug, se for vazio, ou se for apenas 'index.html'
-  if (!cleanSlug || cleanSlug.length === 0 || cleanSlug === 'index.html') {
-    return null;
+  // Primeiro tenta pegar do query parameter ?c=slug
+  const urlParams = new URLSearchParams(window.location.search);
+  const querySlug = urlParams.get('c');
+  if (querySlug && TELEGRAM_LINKS[querySlug]) {
+    return querySlug;
   }
   
-  return cleanSlug;
+  // Depois tenta pegar do path /slug
+  const path = window.location.pathname;
+  const pathSlug = path.replace(/^\//, '').split('/')[0].split('?')[0].split('#')[0];
+  
+  if (pathSlug && pathSlug.length > 0 && pathSlug !== 'index.html' && TELEGRAM_LINKS[pathSlug]) {
+    return pathSlug;
+  }
+  
+  return null;
 }
 
 
