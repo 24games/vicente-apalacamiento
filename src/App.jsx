@@ -8,8 +8,13 @@ import ScrollToTop from './components/ScrollToTop';
 import TrustedBadge from './components/TrustedBadge';
 import CTAButton from './components/CTAButton';
 import ProgressionTable from './components/ProgressionTable';
+import { WHATSAPP_LINK } from './config/campaignLinks';
 
-export default function LandingPage() {
+/**
+ * Componente Principal da Landing Page
+ * @param {string} telegramLink - Link dinâmico do Telegram baseado na slug (obrigatório)
+ */
+export default function LandingPage({ telegramLink }) {
   const [activeTab, setActiveTab] = useState(null);
   const [memberCount, setMemberCount] = useState(12347);
   const [availableSpots, setAvailableSpots] = useState(60);
@@ -186,7 +191,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mb-10"
             >
-              <CTAButton />
+              <CTAButton telegramLink={telegramLink} />
             </motion.div>
 
             {/* Tabela de Progressão */}
@@ -365,7 +370,7 @@ export default function LandingPage() {
 
             {/* CTA */}
             <div className="mt-10">
-              <CTAButton variant="secondary" />
+              <CTAButton telegramLink={telegramLink} variant="secondary" />
             </div>
           </motion.div>
         </div>
@@ -498,7 +503,7 @@ export default function LandingPage() {
             </div>
 
             <div className="mt-8">
-              <CTAButton />
+              <CTAButton telegramLink={telegramLink} />
             </div>
           </motion.div>
         </div>
