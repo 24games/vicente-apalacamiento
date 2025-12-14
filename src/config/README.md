@@ -121,3 +121,4 @@ Em modo de desenvolvimento, o sistema loga no console:
 - ✅ Se a slug não existir, usa o link padrão (cr1-a6f2)
 - ✅ Se não houver slug na URL, também usa o padrão
 
+

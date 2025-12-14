@@ -62,3 +62,4 @@ Após o deploy, você receberá uma URL como:
 2. Arraste a pasta `dist`
 3. Pronto em 30 segundos!
 
+

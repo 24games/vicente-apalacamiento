@@ -38,7 +38,15 @@ export function getSlugFromUrl() {
   // Remove a barra inicial e pega a primeira parte
   const slug = path.replace(/^\//, '').split('/')[0];
   
-  // Retorna null se não houver slug ou se for vazio
-  return slug && slug.length > 0 ? slug : null;
+  // Remove query strings e hash se houver
+  const cleanSlug = slug.split('?')[0].split('#')[0];
+  
+  // Retorna null se não houver slug, se for vazio, ou se for apenas 'index.html'
+  if (!cleanSlug || cleanSlug.length === 0 || cleanSlug === 'index.html') {
+    return null;
+  }
+  
+  return cleanSlug;
 }
+
 

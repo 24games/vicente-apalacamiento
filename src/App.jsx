@@ -8,13 +8,46 @@ import ScrollToTop from './components/ScrollToTop';
 import TrustedBadge from './components/TrustedBadge';
 import CTAButton from './components/CTAButton';
 import ProgressionTable from './components/ProgressionTable';
-import { WHATSAPP_LINK } from './config/campaignLinks';
+import { WHATSAPP_LINK, getSlugFromUrl, getTelegramLink } from './config/campaignLinks';
 
 /**
  * Componente Principal da Landing Page
- * @param {string} telegramLink - Link dinâmico do Telegram baseado na slug (obrigatório)
+ * Detecta automaticamente a slug da URL e usa o link do Telegram correspondente
  */
-export default function LandingPage({ telegramLink }) {
+export default function LandingPage() {
+  // Detecta a slug e obtém o link do Telegram dinamicamente
+  const [telegramLink, setTelegramLink] = useState(() => {
+    const slug = getSlugFromUrl();
+    return getTelegramLink(slug);
+  });
+
+  // Atualiza o link quando a rota muda
+  useEffect(() => {
+    const updateTelegramLink = () => {
+      const slug = getSlugFromUrl();
+      const newLink = getTelegramLink(slug);
+      setTelegramLink(newLink);
+      
+      if (import.meta.env.DEV) {
+        console.log('🔗 Slug detectada:', slug || 'nenhuma (usando padrão)');
+        console.log('📱 Link do Telegram:', newLink);
+      }
+    };
+
+    // Atualiza na montagem
+    updateTelegramLink();
+
+    // Escuta mudanças na URL (popstate para navegação do browser)
+    window.addEventListener('popstate', updateTelegramLink);
+    
+    // Escuta mudanças de hash (caso use hash routing)
+    window.addEventListener('hashchange', updateTelegramLink);
+
+    return () => {
+      window.removeEventListener('popstate', updateTelegramLink);
+      window.removeEventListener('hashchange', updateTelegramLink);
+    };
+  }, []);
   const [activeTab, setActiveTab] = useState(null);
   const [memberCount, setMemberCount] = useState(12347);
   const [availableSpots, setAvailableSpots] = useState(60);
