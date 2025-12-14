@@ -122,3 +122,4 @@ Em modo de desenvolvimento, o sistema loga no console:
 - ✅ Se não houver slug na URL, também usa o padrão
 
 
+

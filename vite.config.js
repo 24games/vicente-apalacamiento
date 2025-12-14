@@ -1,21 +1,25 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
-import { copyFileSync } from 'fs'
+import { copyFileSync, existsSync } from 'fs'
 
 // Plugin para copiar _redirects para dist
 const copyRedirects = () => {
   return {
     name: 'copy-redirects',
-    closeBundle() {
+    writeBundle() {
       try {
-        copyFileSync(
-          path.resolve(__dirname, 'public/_redirects'),
-          path.resolve(__dirname, 'dist/_redirects')
-        )
-        console.log('✅ _redirects copiado para dist/')
+        const redirectsPath = path.resolve(__dirname, 'public/_redirects');
+        const distPath = path.resolve(__dirname, 'dist/_redirects');
+        
+        if (existsSync(redirectsPath)) {
+          copyFileSync(redirectsPath, distPath);
+          console.log('✅ _redirects copiado para dist/');
+        } else {
+          console.warn('⚠️ Arquivo public/_redirects não encontrado');
+        }
       } catch (error) {
-        console.warn('⚠️ Não foi possível copiar _redirects:', error.message)
+        console.warn('⚠️ Erro ao copiar _redirects:', error.message);
       }
     }
   }
