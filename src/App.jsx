@@ -8,44 +8,44 @@ import ScrollToTop from './components/ScrollToTop';
 import TrustedBadge from './components/TrustedBadge';
 import CTAButton from './components/CTAButton';
 import ProgressionTable from './components/ProgressionTable';
-import { WHATSAPP_LINK, getSlugFromUrl, getTelegramLink } from './config/campaignLinks';
+import { getSlugFromUrl, getWhatsAppLink } from './config/campaignLinks';
 
 /**
  * Componente Principal da Landing Page
- * Detecta automaticamente a slug da URL e usa o link do Telegram correspondente
+ * Detecta automaticamente a slug da URL e usa o link do WhatsApp correspondente
  */
 export default function LandingPage() {
-  // Detecta a slug e obtém o link do Telegram dinamicamente
-  const [telegramLink, setTelegramLink] = useState(() => {
+  // Detecta a slug e obtém o link do WhatsApp dinamicamente
+  const [whatsappLink, setWhatsAppLink] = useState(() => {
     const slug = getSlugFromUrl();
-    return getTelegramLink(slug);
+    return getWhatsAppLink(slug);
   });
 
   // Atualiza o link quando a rota muda
   useEffect(() => {
-    const updateTelegramLink = () => {
+    const updateWhatsAppLink = () => {
       const slug = getSlugFromUrl();
-      const newLink = getTelegramLink(slug);
-      setTelegramLink(newLink);
+      const newLink = getWhatsAppLink(slug);
+      setWhatsAppLink(newLink);
       
       if (import.meta.env.DEV) {
         console.log('🔗 Slug detectada:', slug || 'nenhuma (usando padrão)');
-        console.log('📱 Link do Telegram:', newLink);
+        console.log('📱 Link do WhatsApp:', newLink);
       }
     };
 
     // Atualiza na montagem
-    updateTelegramLink();
+    updateWhatsAppLink();
 
     // Escuta mudanças na URL (popstate para navegação do browser)
-    window.addEventListener('popstate', updateTelegramLink);
+    window.addEventListener('popstate', updateWhatsAppLink);
     
     // Escuta mudanças de hash (caso use hash routing)
-    window.addEventListener('hashchange', updateTelegramLink);
+    window.addEventListener('hashchange', updateWhatsAppLink);
 
     return () => {
-      window.removeEventListener('popstate', updateTelegramLink);
-      window.removeEventListener('hashchange', updateTelegramLink);
+      window.removeEventListener('popstate', updateWhatsAppLink);
+      window.removeEventListener('hashchange', updateWhatsAppLink);
     };
   }, []);
   const [activeTab, setActiveTab] = useState(null);
@@ -95,13 +95,13 @@ export default function LandingPage() {
   ];
 
   const faqs = [
-    { q: '¿Es realmente 100% gratis?', a: '¡Sí! El grupo VIP en Telegram es completamente gratis. No pagas nada para entrar y recibir los tips diarios.' },
+    { q: '¿Es realmente 100% gratis?', a: '¡Sí! El grupo VIP en WhatsApp es completamente gratis. No pagas nada para entrar y recibir los tips diarios.' },
     { q: '¿Necesito entender de apuestas?', a: '¡No! El método es tan simple que hasta los principiantes pueden seguirlo. Solo necesitas copiar las entradas que enviamos.' },
     { q: '¿Cuánto dinero necesito para empezar?', a: 'Puedes empezar con solo $15.000 pesos. El método fue creado justamente para quienes tienen poco capital inicial.' },
     { q: '¿Las apuestas no son muy arriesgadas?', a: 'Trabajamos SOLO con cuotas de 1.40 — las más seguras del mercado. Nuestra tasa de acierto es superior al 80%, muy por encima del promedio.' },
     { q: '¿Cuánto tiempo toma completar los 9 pasos?', a: 'En promedio 3 días. Algunos alumnos lo completan en 2 días, dependiendo del calendario de partidos.' },
     { q: '¿Funciona para principiantes?', a: '¡Sí! La mayoría de nuestros miembros eran principiantes totales. El método es simple: recibe el tip, copia la entrada, gana.' },
-    { q: '¿Cómo recibo los tips diarios?', a: 'En cuanto entres al grupo VIP de Telegram, recibirás notificaciones con las mejores oportunidades del día.' }
+    { q: '¿Cómo recibo los tips diarios?', a: 'En cuanto entres al grupo VIP de WhatsApp, recibirás notificaciones con las mejores oportunidades del día.' }
   ];
 
   const benefits = [
@@ -224,7 +224,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mb-10"
             >
-              <CTAButton telegramLink={telegramLink} />
+              <CTAButton whatsappLink={whatsappLink} />
             </motion.div>
 
             {/* Tabela de Progressão */}
@@ -245,7 +245,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[150px]"></div>
           <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[150px]"></div>
-        </div>
+            </div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-10 md:mb-14">
@@ -301,7 +301,7 @@ export default function LandingPage() {
                 </div>
                 <div className="text-gray-300 font-semibold text-sm">{item.title}</div>
               </motion.div>
-            ))}
+              ))}
           </div>
 
           {/* Trusted Badge */}
@@ -310,7 +310,7 @@ export default function LandingPage() {
           </div>
 
           {/* CTA */}
-          <CTAButton telegramLink={telegramLink} />
+          <CTAButton whatsappLink={whatsappLink} />
         </div>
       </section>
 
@@ -403,7 +403,7 @@ export default function LandingPage() {
 
             {/* CTA */}
             <div className="mt-10">
-              <CTAButton telegramLink={telegramLink} variant="secondary" />
+              <CTAButton whatsappLink={whatsappLink} variant="secondary" />
             </div>
           </motion.div>
         </div>
@@ -415,7 +415,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-green-500/20 rounded-full blur-[150px]"></div>
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-[150px]"></div>
-        </div>
+            </div>
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-10">
@@ -536,7 +536,7 @@ export default function LandingPage() {
             </div>
 
             <div className="mt-8">
-              <CTAButton telegramLink={telegramLink} />
+              <CTAButton whatsappLink={whatsappLink} />
             </div>
           </motion.div>
         </div>
@@ -617,7 +617,7 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="mt-12">
-            <CTAButton telegramLink={telegramLink} variant="secondary" />
+            <CTAButton whatsappLink={whatsappLink} variant="secondary" />
           </div>
         </div>
 
@@ -723,7 +723,7 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="mt-12">
-            <CTAButton telegramLink={telegramLink} />
+            <CTAButton whatsappLink={whatsappLink} />
           </div>
         </div>
       </section>
@@ -772,12 +772,12 @@ export default function LandingPage() {
             {/* Disclaimer */}
             <div className="space-y-2 mb-5">
               <p className="text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                Este sitio no forma parte de Telegram ni está avalado por Telegram.
-              </p>
+              Este sitio no forma parte de WhatsApp ni está avalado por WhatsApp.
+            </p>
               <p className="text-xs text-gray-600">
-                © 2025 Método Vicente. Todos los derechos reservados.
-              </p>
-            </div>
+              © 2025 Método Vicente. Todos los derechos reservados.
+            </p>
+          </div>
 
             {/* Social proof badge */}
             <motion.div 
