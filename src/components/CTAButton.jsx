@@ -1,22 +1,18 @@
 import { motion } from 'framer-motion';
-import { DEFAULT_WHATSAPP_LINK } from '../config/campaignLinks';
+import { WHATSAPP_LINK } from '../config/campaignLinks';
 
 /**
  * Componente de Botão CTA
- * @param {string} whatsappLink - Link dinâmico do WhatsApp (obrigatório)
  * @param {string} variant - Variante do botão ('primary' | 'secondary')
  * @param {string} className - Classes CSS adicionais
  */
-export default function CTAButton({ whatsappLink, variant = 'primary', className = '' }) {
+export default function CTAButton({ variant = 'primary', className = '' }) {
   const baseClasses = "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300";
   
   const variants = {
     primary: "bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 text-base shadow-lg hover:shadow-xl",
     secondary: "bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-white/40 text-white px-6 py-3 text-sm"
   };
-
-  // Fallback para whatsappLink caso não seja fornecido
-  const finalWhatsAppLink = whatsappLink || DEFAULT_WHATSAPP_LINK;
 
   // Logo do WhatsApp em SVG
   const WhatsAppIcon = () => (
@@ -35,7 +31,7 @@ export default function CTAButton({ whatsappLink, variant = 'primary', className
   return (
     <div className={`text-center ${className}`}>
       <motion.a
-        href={finalWhatsAppLink}
+        href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
         className={`${baseClasses} ${variants[variant]}`}
